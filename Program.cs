@@ -6,29 +6,46 @@ namespace StringMethods2
     {
         static void Main(string[] args)
         {
-            string Concat(string firstPart, string secondPart)
+        }
+        /// <summary>
+        /// Connects strings
+        /// </summary>
+        /// <param First part: ="firstPart"></param>
+        /// <param Second part: ="secondPart"></param>
+        /// <returns></returns>
+        public string Concat(string firstPart, string secondPart)
+        {
+            return firstPart + secondPart;
+        }
+        /// <summary>
+        /// Checks a string for empty or null
+        /// </summary>
+        /// <param Checked string:="check"></param>
+        /// <returns></returns>
+        public bool NullOrEmpty(string check)
+        {
+            bool isNullOrEmpty = false;
+            if (check == "" && check == null)
             {
-                return firstPart + secondPart;
+                isNullOrEmpty = true;
             }
-            string Join(string separator, string[] array)
+            return isNullOrEmpty;
+        }
+        /// <summary>
+        /// Connects string array with separator
+        /// </summary>
+        /// <param Separator: ="separator"></param>
+        /// <param String array: ="array"></param>
+        /// <returns></returns>
+        public string Join(string separator, string[] array)
+        {
+            string joined = array[0] + separator;
+            for (int i = 1; i <= array.Length - 1; i++)
             {
-                string joined = array[0] + separator;
-                for (int i = 1; i <= array.Length - 1; i++)
-                {
-                    if (i == array.Length - 1) separator = "";
-                    joined = joined + array[i] + separator;
-                }
-                return joined;
+                if (i == array.Length - 1) separator = "";
+                joined = joined + array[i] + separator;
             }
-            bool NullOrEmpty(string check)
-            {
-                bool isNullOrEmpty = false;
-                if (check == "" && check == null)
-                {
-                    isNullOrEmpty = true;
-                }
-                return isNullOrEmpty;
-            }
+            return joined;
         }
     }
 }
